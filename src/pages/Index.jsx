@@ -153,30 +153,31 @@ const Index = () => {
 
   return (
     <Box>
-      <Flex as="nav" bg="teal.500" color="white" padding={4} justifyContent="center">
-        <HStack spacing={4}>
-          <Button leftIcon={<FaHome />} onClick={() => setPage("home")} colorScheme="teal" variant="ghost">
-            Home
-          </Button>
-          <Button leftIcon={<FaProjectDiagram />} onClick={() => setPage("projects")} colorScheme="teal" variant="ghost">
-            Projects
-          </Button>
-          <Button leftIcon={<FaUser />} onClick={() => setPage("myself")} colorScheme="teal" variant="ghost">
-            Myself
-          </Button>
-          <Button leftIcon={<FaTools />} onClick={() => setPage("skills")} colorScheme="teal" variant="ghost">
-            Skills
-          </Button>
-          <Button leftIcon={<FaBlog />} onClick={() => setPage("posts")} colorScheme="teal" variant="ghost">
-            Posts
-          </Button>
-          <Button leftIcon={<FaPhone />} onClick={() => setPage("contact")} colorScheme="teal" variant="ghost">
-            Contact
-          </Button>
-        </HStack>
+      <Flex>
+        <Box as="nav" bg="teal.500" color="white" padding={4} width="200px" height="100vh">
+          <VStack spacing={4} align="stretch">
+            <Button onClick={() => setPage("home")} colorScheme="teal" variant="ghost">
+              Home
+            </Button>
+            <Button onClick={() => setPage("projects")} colorScheme="teal" variant="ghost">
+              Projects
+            </Button>
+            <Button onClick={() => setPage("myself")} colorScheme="teal" variant="ghost">
+              Myself
+            </Button>
+            <Button onClick={() => setPage("skills")} colorScheme="teal" variant="ghost">
+              Skills
+            </Button>
+            <Button onClick={() => setPage("posts")} colorScheme="teal" variant="ghost">
+              Posts
+            </Button>
+            <Button onClick={() => setPage("contact")} colorScheme="teal" variant="ghost">
+              Contact
+            </Button>
+          </VStack>
+        </Box>
+        <Box flex="1">{renderPage()}</Box>
       </Flex>
-      <Divider />
-      {renderPage()}
     </Box>
   );
 };
